@@ -121,7 +121,7 @@ div#tela {
 }
 
 #botaoReiniciar{
-  width:10px;
+  width:150px;
   cursor: pointer;
   transition:transform 0.15s;
 }
