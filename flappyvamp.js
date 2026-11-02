@@ -23,7 +23,7 @@ const gameover = document.getElementById("gameover");
 const obstaculos = document.querySelectorAll(".estaca");   // pega estaca1, 2, 3... sozinho
 const pontos = document.getElementById("pontos");
 let contador = 0;
-//let botaoReiniciar = document.getElementById("botaoReiniciar");
+let botaoReiniciar = document.getElementById("botaoReiniciar");
 
 let y = 0;
 let velocidade = 0;
