@@ -76,6 +76,11 @@ div#tela {
   z-index: 3;
   background-repeat: no-repeat;
   background-size: 100% 100%; 
+  animation-play-state: paused;
+}
+
+body.jogando .estaca {
+  animation-play-state: running;
 }
 
 #estaca1 {
@@ -143,4 +148,20 @@ div#tela {
   color: white;
   font-size: large;
 }
+#menu {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: url("menu.jpg") center / cover no-repeat;
+}
 
+#botaoJogar {
+  position: absolute;
+  left: 40%;
+  top: 48%;
+  width: 20%;
+  height: 12%;
+  background: transparent;   /* teste com rgba(255,0,0,0.4) para ver a posição */
+  border: none;
+  cursor: pointer;
+}
