@@ -76,11 +76,11 @@ div#tela {
   z-index: 3;
   background-repeat: no-repeat;
   background-size: 100% 100%; 
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 
 body.jogando .estaca {
-  animation-play-state: running;
+  animation-play-state: running !important;
 }
 
 #estaca1 {
