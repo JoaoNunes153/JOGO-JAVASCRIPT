@@ -24,11 +24,13 @@ const obstaculos = document.querySelectorAll(".estaca");   // pega estaca1, 2, 3
 const pontos = document.getElementById("pontos");
 let contador = 0;
 let botaoReiniciar = document.getElementById("botaoReiniciar");
+const menu = document.getElementById("menu");
 
 let y = 0;
 let velocidade = 0;
 let comecou = false;   // só começa a cair depois do primeiro espaço
 let morreu = false;
+let jogando = false;
 
 const gravidade = 0.25;
 const pulo = -5;
@@ -43,6 +45,7 @@ function posicaoInicial() {
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space" && !e.repeat) {
     e.preventDefault();
+    if (!jogando) return;  
     if (morreu) return;   // depois que caiu, o espaço não faz nada
     comecou = true;
     velocidade = pulo;
@@ -75,6 +78,7 @@ function loop() {
     requestAnimationFrame(loop);
     return;
   }
+    
 
   velocidade += gravidade;
   if (velocidade > velocidadeMaxima) velocidade = velocidadeMaxima;
@@ -113,5 +117,14 @@ function somadorPontos () {
 }
 
 function recarregar () {
+  location.reload();
+}
+
+function iniciarJogo() {
+  menu.style.display = "none";
+  jogando = true;
+  document.body.classList.add("jogando");
+}
+function recarregar() {
   location.reload();
 }
