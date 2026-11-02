@@ -125,6 +125,4 @@ function iniciarJogo() {
   jogando = true;
   document.body.classList.add("jogando");
 }
-function recarregar() {
-  location.reload();
-}
+
