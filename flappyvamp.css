@@ -151,7 +151,7 @@ body.jogando .estaca {
   position: absolute;
   inset: 0;
   z-index: 20;
-  background: url("menu.jpg") center / 100% 100% no-repeat;
+  background: #0b0b2a url("menu.jpg") center / contain no-repeat;
 }
 
 #botaoJogar {
