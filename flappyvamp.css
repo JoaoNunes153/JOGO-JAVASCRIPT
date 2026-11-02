@@ -38,3 +38,101 @@ div#tela {
   width: 80px;
   z-index: 2;
 }
+
+@keyframes movimento {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.nuvens {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#nuvens1 {
+  background-image: url("nuvens_camada1_distante.png");
+  animation: movimento 40s linear infinite;
+}
+#nuvens2 {
+  background-image: url("nuvens_camada2_media.png");
+  animation: movimento 25s linear infinite;
+}
+#nuvens3 {
+  background-image: url("nuvens_camada3_proxima.png");
+  animation: movimento 14s linear infinite;
+}
+
+.estaca {
+  right: -64px;
+  position: absolute;
+  bottom: 85px;               
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+}
+
+#estaca1 {
+  width: 64px;                
+  height: 150px;              
+  background-image: url("estaca_1.png");
+  animation: animacaoEstaca1 3.5s infinite linear;
+}
+
+@keyframes animacaoEstaca1 {
+  from { right: -64px; }
+  to { right: 100%; }
+}
+#estaca2 {
+  width: 64px;
+  height: 240px;
+  background-image: url("estaca_2.png");
+  animation: animacaoEstaca1 3.5s infinite linear;
+  animation-delay: 1.5s;
+}
+
+#estaca3 {
+  width: 64px;
+  height: 330px;
+  background-image: url("estaca_3.png");
+  animation: animacaoEstaca1 3.5s infinite linear;
+  animation-delay: 4s;
+}
+
+#gameover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  visibility: hidden;
+  font: bold 48px sans-serif;
+  color: #fff;
+  text-shadow: 0 0 12px #000;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+#tela.parado * {
+  animation-play-state: paused !important;
+}
+
+.contador {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  height: 10px;
+  z-index: 4;
+  color: white;
+  font-size: large;
+}
+
+#botaoReiniciar {
+
+}

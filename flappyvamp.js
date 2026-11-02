@@ -7,6 +7,7 @@ const sprites = [
 let frame = 0;
 
 setInterval(() => {
+    if (morreu) return;   // depois da colisão, não troca mais o sprite
     frame = (frame + 1) % sprites.length;
 
     document.getElementById("vampiro").src =
@@ -18,6 +19,11 @@ setInterval(() => {
 
 const tela = document.getElementById("tela");
 const vampiro = document.getElementById("vampiro");
+const gameover = document.getElementById("gameover");
+const obstaculos = document.querySelectorAll(".estaca");   // pega estaca1, 2, 3... sozinho
+const pontos = document.getElementById("pontos");
+let contador = 0;
+//let botaoReiniciar = document.getElementById("botaoReiniciar");
 
 let y = 0;
 let velocidade = 0;
@@ -43,6 +49,25 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// "folga" os PNGs têm bordas transparentes.
+function colidiu(a, b, folga = 8) {
+  const r1 = a.getBoundingClientRect();
+  const r2 = b.getBoundingClientRect();
+  return (
+    r1.left   + folga < r2.right  - folga &&
+    r1.right  - folga > r2.left   + folga &&
+    r1.top    + folga < r2.bottom - folga &&
+    r1.bottom - folga > r2.top    + folga
+  );
+}
+
+function fimDeJogo() {
+  morreu = true;
+  gameover.style.visibility = "visible";
+  tela.classList.add("parado");      // congela cenário, nuvens e estacas (ver CSS)
+  // vampiro.src = "perdeu.png";
+}
+
 function loop() {
   if (!comecou) {
     y = posicaoInicial();
@@ -63,11 +88,30 @@ function loop() {
 
   // saiu pela parte de baixo: acabou
   if (y > tela.clientHeight) {
-    morreu = true;
+    fimDeJogo();
     return;   // para o loop
   }
 
+  // bateu em alguma estaca?
+  for (const o of obstaculos) {
+    if (colidiu(vampiro, o)) {
+      fimDeJogo();
+      return;
+    }
+  }
+
   requestAnimationFrame(loop);
+
+  somadorPontos();
 }
 
 loop();
+
+function somadorPontos () {
+  contador++;
+  pontos.textContent = `Pontos: ${contador}`;
+}
+
+function recarregar () {
+  location.reload();
+}
