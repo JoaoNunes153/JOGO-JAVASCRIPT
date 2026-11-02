@@ -72,7 +72,7 @@ function fimDeJogo() {
 }
 
 function loop() {
-  if (!comecou) {
+  if (!jogando || !comecou) {
     y = posicaoInicial();
     vampiro.style.top = y + "px";
     requestAnimationFrame(loop);
