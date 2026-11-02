@@ -149,10 +149,7 @@ body.jogando .estaca {
 }
 #menu {
   position: absolute;
-  top: 15%;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 20;
   background: url("menu.jpg") center / 100% 100% no-repeat;
 }
