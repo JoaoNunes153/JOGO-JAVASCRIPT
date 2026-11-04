@@ -104,7 +104,7 @@ body.jogando .estaca {
 
 #estaca3 {
   width: 64px;
-  height: 250px;
+  height: 230px;
   background-image: url("estaca_3.png");
   animation: animacaoEstaca1 3.5s infinite linear;
   animation-delay: 4s;
