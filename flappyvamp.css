@@ -72,7 +72,7 @@ div#tela {
 .estaca {
   right: -64px;
   position: absolute;
-  bottom: 85px;               
+  bottom: 75px;               
   z-index: 3;
   background-repeat: no-repeat;
   background-size: 100% 100%; 
@@ -85,7 +85,7 @@ body.jogando .estaca {
 
 #estaca1 {
   width: 64px;                
-  height: 150px;              
+  height: 130px;              
   background-image: url("estaca_1.png");
   animation: animacaoEstaca1 3.5s infinite linear;
 }
@@ -96,7 +96,7 @@ body.jogando .estaca {
 }
 #estaca2 {
   width: 64px;
-  height: 240px;
+  height: 220px;
   background-image: url("estaca_2.png");
   animation: animacaoEstaca1 3.5s infinite linear;
   animation-delay: 1.5s;
@@ -104,7 +104,7 @@ body.jogando .estaca {
 
 #estaca3 {
   width: 64px;
-  height: 330px;
+  height: 310px;
   background-image: url("estaca_3.png");
   animation: animacaoEstaca1 3.5s infinite linear;
   animation-delay: 4s;
