@@ -6,6 +6,8 @@
 
 body{
   background-image: url(cenario.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 div#tela {
